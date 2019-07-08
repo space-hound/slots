@@ -2,6 +2,8 @@
 
 This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my paper and get the grades.
 
+<br>
+
 ## technologies
  - Libraries/Frameworks used until now:
    - [Node](https://nodejs.org/en/)
@@ -16,6 +18,8 @@ This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my
    - [Express](https://expressjs.com/)
    - [MongoDB](https://www.mongodb.com/)
 
+<br>
+
 ## bibliography
 
 I used these books:
@@ -23,6 +27,8 @@ I used these books:
  - [Mathematics Slots Configurations Combinations Probabilities](https://www.amazon.com/Mathematics-Slots-Configurations-Combinations-Probabilities/dp/9731991409)
 
 And also a ton of [stackoverflow](https://stackoverflow.com/) posts.
+
+<br>
 
 ## pictures
 
