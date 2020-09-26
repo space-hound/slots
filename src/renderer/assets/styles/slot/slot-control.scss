@@ -1,0 +1,300 @@
+
+#slot-control {
+
+    margin-top: 2rem;
+
+    .slot-control__wrapper {
+
+        align-items: stretch !important;
+        padding: 1rem 1.5rem;
+        border-radius: .5rem;
+        border: 3px solid color(silver);
+        background: #D31027;
+        background: -webkit-linear-gradient(to right, #EA384D, #D31027);
+        background: linear-gradient(to right, #EA384D, #D31027);
+
+    }
+}
+
+#slot-control {
+
+    .control-text,
+    .control-button,
+    .control-mixt {
+
+        @include font();
+
+        background-color: color(black);
+
+        user-select: none;
+
+        h3 {
+            @include font($size: 1.5rem, $weight: 400, $color: white);
+        }
+
+        span {
+            @include font($type: 'secondary', $size: 1.2rem, $color: yellow);
+        }
+    }
+
+    .control-text,
+    .control-button {
+        border-radius: .5rem;
+        border: 2px solid color(yellow);
+    }
+
+    .control-mixt {
+        .control-text,
+        .control-button {
+            border: none;
+        }
+
+        border-radius: .5rem;
+        border: 2px solid color(yellow);
+    }
+
+    .control-text {
+
+        border-radius: .5rem;
+        border: 2px solid color(yellow);
+
+        h3 {
+            display: inline-block;
+        }
+    }
+
+    .control-button {
+        cursor: pointer;
+
+        transition: all ease 250ms;
+
+        i {
+            transition: all ease 250ms;
+        }
+
+        h3 {
+            transition: all ease 250ms;
+        }
+
+        &:not(.disabled):hover {
+            color: color(yellow);
+
+            i {
+                color: color(yellow);
+            }
+
+            h3 {
+                color: color(yellow);
+            }
+        }
+
+        &.disabled {
+            pointer-events: none;
+
+            border-color: color(silver);
+
+            h3, i {
+                color: color(gray) !important;
+            }
+        }
+    }
+    
+}
+
+#slot-control {
+
+    .balance-col {
+        width: 50%;
+    }
+
+    .bet-col {
+        width: 25%;
+    }
+
+    .gamble-col {
+        width: 15%;
+    }
+
+    .control-col {
+        width: 10%;
+    }
+}
+
+#slot-control {
+
+    .balance-col {
+
+        justify-content: center !important;
+
+        .slot-row {
+
+            &:last-of-type {
+                @include flex($justify: flex-start);
+            }
+        }
+    }
+
+    #control-message {
+        width: 100%;
+
+        padding: .6rem;
+        margin-bottom: .5rem;
+
+        h3 {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    #control-balance,
+    #control-exit {
+        padding: .5rem;
+        text-align: center;
+    }
+
+    #control-balance {
+        
+        @include flex();
+
+        flex: 2;
+        margin-right: 1rem;
+
+        span {         
+            margin-right: .6rem;
+        }
+    }
+
+    #control-exit {
+        flex: 1;
+    }
+}
+
+#slot-control {
+    
+    .bet-col {
+        align-self: center;
+        padding: 0 1rem;
+    }
+
+    #control-bet {
+
+        @include flex($direction: column);
+
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        .control-button {
+            padding: .6rem 1rem;
+            border-radius: 0;
+            text-align: center;
+            font-size: .8rem;
+        }
+
+        .bet-actions {
+            @include flex($justify: space-between);
+
+            width: 100%;
+            border-bottom: 1px solid color(yellow);
+
+            .bet-up {
+                border-right: 1px solid color(yellow);
+            }
+
+            .bet-down {
+                border-left: 1px solid color(yellow);
+            }
+        }
+
+        .bet-display {
+            overflow: hidden;
+            padding: .6rem 0;
+        }
+    }
+}
+
+#slot-control {
+
+    .gamble-col {
+        justify-content: space-between !important;
+        padding: .4rem 0;
+        padding-right: 1rem;
+
+        .control-button {
+            width: 100%;
+            padding: .4rem 0;
+            text-align: center;
+
+            h3 {
+                @include font($size: 1.3rem);
+            }
+        }
+    }
+}
+
+#slot-control {
+
+    .control-col {
+        justify-content: center !important;
+        align-items: center !important;
+
+        padding: .5rem 0;
+
+        .control-button {
+            position: relative;
+            border-radius: 50%;
+        }
+    }
+
+    #control-play,
+    #control-auto {
+        .play-start,
+        .play-stop {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: color(white);
+        }
+
+        &.start {
+            .play-stop {
+                display: none;
+            }
+        }
+
+        &.stop {
+            .play-start {
+                display: none;
+            }
+        }
+    }
+
+    #control-play {
+        width: 3.8rem;
+        height: 3.8rem;
+
+        font-size: 1.6rem;
+
+        transform: translateY(.7rem);
+
+        .play-start {
+            transform: translate(-60%, -50%) rotate(-180deg);
+        }
+    }
+
+    #control-auto {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        font-size: 1.2rem;
+
+        &.auto {
+            .play-start {
+                display: none;
+            }
+            .play-stop {
+                display: inherit;
+            }
+        }
+    }
+}

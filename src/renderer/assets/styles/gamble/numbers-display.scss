@@ -1,0 +1,86 @@
+
+$card-offset: 2rem;
+
+#gamble-numbers {
+
+    #gamble-numbers__display {
+
+        position: relative;
+
+        width: 100%;
+        height: 60%;
+
+        .numbers-display__wrapper {
+
+            @include flex($align: flex-end);
+
+            width: 100%; 
+            height: 100%;
+            padding: 2rem 4rem;
+
+            .numbers-card {
+
+                @include flex($align: stretch);
+
+                flex: 1;
+
+                padding: 2px;
+                border-radius: .5rem;
+                border: 1px solid color(silver);
+                background-color: color(white);
+
+                transition: all ease-in 250ms;
+    
+                div {
+                    @include font($size: 3rem, $color: yellow);
+
+                    flex: 1;
+                    padding: 3rem 0;
+                    text-align: center;
+                    border-radius: .5rem;
+                    border: 1px solid color(silver);
+                    background-color: color(gray);
+
+                    transition: all ease-in 250ms;
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: 1rem;
+                }
+
+                &.active, &:hover {
+
+                    border-color: color(silver);
+                    background-color: color(white);
+
+                    div {
+                        color: color(white);
+                        
+                        border-color: color(silver);
+                        background: #f12711;
+                        background: -webkit-linear-gradient(to top, #f5af19, #f12711);
+                        background: linear-gradient(to top, #f5af19, #f12711);
+                    }
+                }
+
+                @for $i from 2 through 7 {
+
+                    &:nth-of-type(#{$i}) {
+                        margin-bottom: $i * $card-offset;
+                    }
+                }
+
+                $j: 2;
+
+                @for $i from 12 through 8 {
+
+                    &:nth-of-type(#{$i}) {
+                        margin-bottom: $j * $card-offset;
+                    }
+
+                    $j: $j +1;
+                }
+            }
+        }
+    }
+}

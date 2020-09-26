@@ -1,0 +1,133 @@
+/* ================================================================================== */
+
+    $symbolWidth: 9rem;
+    $symbolHeight: 9rem;
+    $symbolPadding: 1rem;
+    $symbolMargin: .2rem;
+    $symbolBorder: .2rem;
+
+    @function symbolHeight( $offset: 1, $halve: false ) {
+
+        $size: $symbolHeight + $symbolPadding * 2 + $symbolBorder * 2;
+        $half: 0rem;
+
+        @if $halve == true {
+            $half: $size / 2;
+        }
+
+        @return ($size * $offset) + $half;
+    }
+
+/* ================================================================================== */
+
+#slot-display {
+
+    @include flex();
+
+    .display {
+
+        @include flex($type: inline-flex);
+
+        margin: 0 auto;
+
+        .reel {
+
+            position: relative;
+
+            border-radius: .5rem;
+            border: 3px solid color(silver);
+            background-color: color(gray);
+
+            &:not(:last-of-type) {
+                margin-right: .6rem;
+            }
+
+            .reel-inner {
+
+                .symbol {
+
+                    box-sizing: content-box;
+
+                    width: $symbolWidth;
+                    height: $symbolHeight;
+
+                    padding: $symbolPadding + $symbolMargin;
+                    //margin: $symbolMargin;
+                    border: $symbolBorder solid transparent;
+
+                    &.active {
+                        border-radius: .5rem;
+                        background-color: color(black);
+                        border-color: color(yellow);
+                    }
+
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .line-marks {
+
+        position: relative;
+        //overflow: hidden;
+
+        height: 100%;
+
+        &.left {
+            margin-right: .6rem;
+        }
+
+        &.right {
+            margin-left: .6rem;
+        }
+
+        .mark-row {
+
+            @include flex($direction: column, $justify: center);
+
+            box-sizing: content-box;
+            height: symbolHeight();
+
+            & > div.mark {
+
+                box-sizing: content-box;
+                padding: .2rem .8rem;
+                border-radius: .5rem;
+                border: .1rem solid #000;
+                background-color: color(yellow);
+    
+                transition: all ease 250ms;
+                
+                span {
+                    @include font($size: 1.5rem, $weight: 600, $color: black);
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    &:not(.disabled) {
+                        background-color: color(gray);
+
+                        span {
+                            color: color(white);
+                        }
+                    }
+                }
+
+                &.disabled {
+                    background-color: color(silver);
+
+                    span {
+                        color: color(black);
+                    }
+                }
+    
+            }
+        }
+    }
+}

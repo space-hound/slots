@@ -1,0 +1,82 @@
+/* https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6 */
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (eot: "?", svg: "#" + str-replace($name, " ", "_"));
+
+    $formats: (otf: "opentype", ttf: "truetype");
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+$fonts: (
+    (
+        'name': 'Encode Sans Condensed',
+        'src': '~assets/fonts/EncodeSansCondensed/',
+        'ext': ttf,
+        'types': (
+            ('EncodeSansCondensed-Light', 300)
+            ('EncodeSansCondensed-Regular', 400)
+            ('EncodeSansCondensed-Bold', 700)
+        ),
+    ),
+    (
+        'name': 'Montserrat',
+        'src': '~assets/fonts/Montserrat/',
+        'ext': ttf,
+        'types': (
+            ('Montserrat-Light', 300)
+            ('Montserrat-Regular', 400)
+            ('Montserrat-Medium', 500)
+            ('Montserrat-Bold', 700)
+        ),
+    )
+);
+
+@each $font in $fonts {
+
+    $name: map-get($font, 'name');
+    $src: map-get($font, 'src');
+    $ext: map-get($font, 'ext');
+
+    @each $type in map-get($font, 'types') {
+
+        $file: nth($type, 1);
+        $weight: nth($type, 2);
+
+        $path: $src + $file;
+
+        @include font-face($name, $path, $weight, null, $ext);
+    }
+
+}

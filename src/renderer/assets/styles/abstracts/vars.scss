@@ -1,0 +1,16 @@
+$colors: (
+    white: #FCFCFC,
+    black: #272727,
+    gray: #747474,
+    orange: #FF652F,
+    yellow: #FFE400,
+    green: #14A76C,
+    purple: #802BB1,
+    red: #FC4445,
+    blue: #4056A1,
+    silver: #b6b4b4,
+);
+
+@function color( $color ) {
+    @return map-get($colors, $color);
+}

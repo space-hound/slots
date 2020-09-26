@@ -1,0 +1,84 @@
+{
+    "data": {
+        "name": "anonymous",
+        "credits": 1000000,
+        "games": [
+            {
+                "name": "Pepperhot",
+                "key": "pepperhot",
+                "image": "./assets/pepperhot/pepper.png"
+            },
+            {
+                "name": "Cakerush",
+                "key": "cakerush",
+                "image": "./assets/cakerush/baker.png"
+            },
+            {
+                "name": "Moneyshot",
+                "key": "moneyshot",
+                "image": "./assets/moneyshot/bitcoin.png"
+            }
+        ]
+    },
+    "games": {
+        "pepperhot": {
+            "bet": null,
+            "lines": null,
+            "current": null,
+            "hold": 0,
+            "wins": null,
+            "canChangeBet": true,
+            "canChangeLines": true,
+            "canSpin": true,
+            "canCollect": false,
+            "canGamble": false,
+            "gambleStep": null
+        },
+        "cakerush": {
+            "bet": null,
+            "lines": null,
+            "current": null,
+            "hold": 0,
+            "wins": null,
+            "canChangeBet": true,
+            "canChangeLines": true,
+            "canSpin": true,
+            "canCollect": false,
+            "canGamble": false,
+            "gambleStep": null
+        },
+        "moneyshot": {
+            "bet": null,
+            "lines": null,
+            "current": null,
+            "hold": 0,
+            "wins": null,
+            "canChangeBet": true,
+            "canChangeLines": true,
+            "canSpin": true,
+            "canCollect": false,
+            "canGamble": false,
+            "gambleStep": null
+        }
+    },
+    "gamble": {
+        "comparison": {
+            "history": [],
+            "current": null,
+            "maximum": 5,
+            "historyCap": 10
+        },
+        "cards": {
+            "history": [],
+            "current": null,
+            "maximum": 5,
+            "historyCap": 10
+        },
+        "color": {
+            "history": [],
+            "current": null,
+            "maximum": 5,
+            "historyCap": 10
+        }
+    }
+}

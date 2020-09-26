@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,500,600,800&display=swap');
+//  font-family: 'Encode Sans Expanded', sans-serif; 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i,700,700i&display=swap');
+//  font-family: 'Montserrat', sans-serif;
+
+@import './abstracts/all.scss';
+
+@import './menu/menu.scss';
+
+@import './slot/slot.scss';
+
+@import './gamble/gamble.scss';
+
+:root {
+    
+    font-size: 16px;
+
+    @include xlarge {
+        font-size: 14px;
+    }
+
+    @include large {
+        font-size: 12px;
+    }
+
+    @include medium {
+        font-size: 10px;
+    }
+
+    @include small {
+        font-size: 9px;
+    }
+
+    @include xsmall {
+        font-size: 7px;
+    }
+}
+
+body {
+
+    @include font();
+
+    position: relative;
+    
+    width: 100vw; 
+    height: 100vh;
+    
+    background-color: color(black);
+
+    overflow: hidden;
+}

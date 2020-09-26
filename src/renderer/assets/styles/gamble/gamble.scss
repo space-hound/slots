@@ -1,0 +1,33 @@
+@import "./numbers-display.scss";
+@import "./numbers-control.scss";
+
+#gamble {
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 100;
+
+    background-color: color(black);
+
+    transform: translateY(-100%);
+    transition: transform ease-in 500ms;
+
+    &.active {
+        transform: translateY(0%);
+    }
+
+    .gamble-row {
+        @include flex($justify: flex-start, $align: flex-start);
+    }
+
+    #gamble-numbers {
+        position: absolute;
+        top:0; left: 0;
+        
+        width: 100vw;
+        height: 100vh;
+    }
+}
