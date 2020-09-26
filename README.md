@@ -5,11 +5,10 @@ This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my
 <br>
 
 ## technologies
- - Libraries/Frameworks used until now:
+ - Libraries/Frameworks/Technologies used until now:
    - [Node](https://nodejs.org/en/)
    - [Webpack](https://webpack.js.org/)
    - [Electron](https://electronjs.org/)
-   - [Vue](https://vuejs.org/)
    - [Chance](https://chancejs.com/)
    - [Lodash](https://lodash.com/docs/4.17.11)
    - [Anime](https://animejs.com/)
@@ -19,6 +18,13 @@ This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my
    - [MongoDB](https://www.mongodb.com/)
 
 <br>
+
+## run
+
+```console
+npm install
+npm run electron:serve
+```
 
 ## bibliography
 
