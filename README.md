@@ -13,10 +13,6 @@ This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my
    - [Lodash](https://lodash.com/docs/4.17.11)
    - [Anime](https://animejs.com/)
 
- - Probably I will use too:
-   - [Express](https://expressjs.com/)
-   - [MongoDB](https://www.mongodb.com/)
-
 <br>
 
 ## run
