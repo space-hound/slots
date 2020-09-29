@@ -1,6 +1,6 @@
 # slots
 
-This is my Bachelor Degree Thesis. So I can't upload the code until I sustain my paper and get the grades.
+This is my Bachelor Degree App.
 
 <br>
 
